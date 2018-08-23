@@ -1,4 +1,5 @@
-\usepackage{amssymb, amsfonts, amsmath, amsthm}
+\usepackage{amssymb, amsfonts, amsthm}
+\usepackage[intlimits]{amsmath}
 \usepackage{enumerate}
 \usepackage{bm}
 \usepackage{color}
@@ -101,12 +102,20 @@ isbn=false]{biblatex}
 %{\buildrel \mathrm{def} \over{=\!\!=}}
 
 \def\:{\colon}
+\newcommand*{\set}[2]{\left\{\,\left.{#1}\vphantom{#2}\,\right|\,{#2}\,\right\}}
 
 \def\defect{\mathop{\rm defect}\nolimits}
+\def\length{\mathop{\rm length}\nolimits}
 \def\area{\mathop{\rm area}\nolimits}
 \def\circum{\mathop{\rm circum}\nolimits}
 \def\Re{\mathop{\rm Re}\nolimits}
 \def\Im{\mathop{\rm Im}\nolimits}
+\def\RR{\mathbb{R}}
+\def\II{\mathbb{I}}
+
+\def\eps{\varepsilon}
+
+
 
 \def\solidtriangle{\text{\ding{115}}}
 \def\solidsquare{\blacksquare}

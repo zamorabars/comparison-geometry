@@ -78,13 +78,12 @@ pair u[];
 u0=(1.4,0)*u;
 
 for i = 1 upto 20:
-z[i]= point i*.15 of p1;
+z[i]=point (arctime (i*(arclength p1)/20) of p1) of p1;
 u[i]=u[i-1] rotated (angle(z[i]-z[i-1]-u[i-1])-angle(-u[i-1]));
 draw z[i]--z[i]+u[i] penhair;
 endfor
-
-
 endfig;
+
 
 beginfig(4) 
 save u;
@@ -100,17 +99,25 @@ p1=z.0..(-.7,1)*u..(2,1)*u..z.4;
 draw p1 penbold;
 draw ddline(z.0, z.4)(0.3, 0.2) pensemibold;
 
+
 pair u[];
 
 u0=(1.9,0)*u;
 
 for i = 1 upto 20:
-z[i]= point i*.15 of p1;
+z[i]=point (arctime (i*(arclength p1)/20) of p1) of p1;
 u[i]=u[i-1] rotated (angle(z[i]-z[i-1]-u[i-1])-angle(-u[i-1]));
 draw z[i]--z[i]+u[i] penhair;
 endfor
-
-
 endfig;
 
+beginfig(5) 
+save u;
+u:=.3cm;
+
+draw (0,0)*u--(6,0)*u--(6,6)*u--(0,6)*u--cycle penhair;
+draw (0,0)*u--(6,6)*u penbold;
+draw (0,0)*u--(1,0)*u--(1,1)*u--(2,1)*u--(2,2)*u--(3,2)*u--(3,3)*u--(4,3)*u--(4,4)*u--(5,4)*u--(5,5)*u--(6,5)*u--(6,6)*u penbold;
+
+endfig;
 end
