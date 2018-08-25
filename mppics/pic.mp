@@ -146,4 +146,39 @@ draw (0,0)*u--(6,6)*u penbold;
 draw (0,0)*u--(1,0)*u--(1,1)*u--(2,1)*u--(2,2)*u--(3,2)*u--(3,3)*u--(4,3)*u--(4,4)*u--(5,4)*u--(5,5)*u--(6,5)*u--(6,6)*u penbold;
 
 endfig;
+
+beginfig(7) 
+save u;
+u:=1cm;
+
+z.a=(0,0)*u;
+z.b=(2,0)*u;
+z.c=(2,2)*u;
+z.d=(0,2)*u;
+
+draw z.a--z.b--z.c--z.d--cycle penbold;
+
+z.u=.3[z.a,z.b];
+z.v=.4[z.b,z.c];
+draw z.u--z.v;
+
+z.w=.7[z.u,z.v];
+z.x=.6[z.c,z.d];
+draw z.w--z.x;
+
+z.y=.5[z.w,z.x];
+z.z=.3[z.d,z.a];
+draw z.y--z.z;
+
+z.p=.5[z.y,z.z];
+z.q=.9[z.d,z.a];
+draw z.p--z.q;
+
+z.r=.5[z.p,z.q];
+z.s=.5[z.u,z.v];
+draw z.r--z.s;
+
+hatchfill z.r--z.s--z.w--z.y--z.p--cycle  withcolor (87, 1mm, -.5bp);
+
+endfig;
 end

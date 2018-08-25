@@ -137,63 +137,12 @@ Find the places with cheating in the proof above and try to fix them.
 
 \section{Length of curves}
 
-Recall that \emph{real interval} is an arbitrary convex set of real line;
-that is, a set $\II$ such that $a,b\in \II$ and $a<x<b$ implies $x\in\II$.
-For example, given two real numbers $a<b$ we may consider the following intervals
-\begin{align*}
-[a,b]
-&\df
-\set{x\in \RR}{a\le x\le b},
-&
-[a,b)
-&\df
-\set{x\in \RR}{a\le x< b},
-\\
-(a,b]
-&\df
-\set{x\in \RR}{a< x\le b},
-&
-(a,b)
-&\df
-\set{x\in \RR}{a< x< b}.
-\end{align*}
-In addition to the bounded intervals described above, there are unbounded intervals
-\begin{align*}
-[a,\infty)
-&\df
-\set{x\in \RR}{a\le x},
-&
-(a,\infty)
-&\df
-\set{x\in \RR}{a< x},
-\\
-(-\infty,a]
-&\df
-\set{x\in \RR}{a\ge x},
-&
-(-\infty,a)
-&\df
-\set{x\in \RR}{a> x}.
-\end{align*}
-Finally the whole real line is also an interval
-$$(-\infty,\infty)=\RR.$$
-
 \begin{thm}{Definition}\label{def:curve}
-A \emph{plane curve}\index{plane curve} is a continuous mapping $\alpha\:\II\to \RR^2$,
-where $\II$ is a real interval and $\RR^2$ is the Euclidean plane. 
+A \emph{plane curve}\index{plane curve} is a continuous mapping $\alpha\:[a,b]\z\to \RR^2$,
+where $\RR^2$ denotes the Euclidean plane. 
 
-If $\II=[a,b]$ and 
-$$\alpha(a)=p,\ \ \alpha(b)=q,$$
+If $\alpha(a)=p$ and $\alpha(b)=q$,
 we say that $\alpha$ is a \emph{curve from $p$ to $q$}\index{curve from $p$ to $q$}.
-\end{thm}
-
-\begin{thm}{Exercise}
-Assume $\alpha\:[a,b]\to\RR^2$ is smooth curve, in particular the velocity vector $\alpha'(t)$ is defined.
-Show that
-\[\length \gamma=\int_a^b|\gamma'(t)|\cdot dt.\]
-\end{thm}
-
-
 
 A curve $\alpha$ called \emph{simple} if it is described by an injective map;
 that is $\alpha(t)=\alpha(t')$ if and only if $t=t'$.
@@ -201,11 +150,13 @@ that is $\alpha(t)=\alpha(t')$ if and only if $t=t'$.
 A curve $\alpha\:[a,b]\to \RR^2$ is called \emph{closed} if $\alpha(a)=\alpha(b)$.
 A closed curve $\alpha\:[a,b]\to \RR^2$ is called simple if it is injective 
 everywhere except the ends; that is, if
-$\alpha(t)=\alpha(t')$ for $t<t'$ then $t=a$ and $t'=b$. 
+$\alpha(t)=\alpha(t')$ for $t<t'$ then $t=a$ and $t'=b$.
+\end{thm}
+ 
 
 
 \begin{thm}{Definition}\label{def:length}
-Let $\alpha\:\II\to \RR^2$ be a curve. Define \emph{length}\index{length of curve} of $\alpha$ as
+Let $\alpha\:[a,b]\to \RR^2$ be a curve. Define \emph{length}\index{length of curve} of $\alpha$ as
 \begin{align*}
 \length \alpha
 &= 
@@ -213,17 +164,150 @@ Let $\alpha\:\II\to \RR^2$ be a curve. Define \emph{length}\index{length of curv
 \\
 &\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \dots+|\alpha(t_{k-1})-\alpha(t_k)|\}. 
 \end{align*}
-where the supremum is taken over all $k$ and all sequences $t_0 < t_1 < \cdots < t_k$ in $\II$.
+where the exact upper bound is taken over all $k$ and all sequences 
+\[a=t_0 < t_1 < \cdots < t_k=b.\]
 
 A curve is called \emph{rectifiable}\index{rectifiable curve} if its length is finite.
 \end{thm}
 
+In other words length of curve is the exact upper bound of lengths of polygonal lines \emph{inscribed} in the curve.
+
+\begin{thm}{Exercise}
+Assume $\alpha\:[a,b]\to\RR^2$ is smooth curve, in particular the velocity vector $\alpha'(t)$ is defined and depends continuously on $t$.
+Show that
+\[\length \alpha=\int_a^b|\alpha'(t)|\cdot dt.\]
+\end{thm}
+
 \begin{thm}{Exercise}\label{ex:nonrectifiable-curve}
-Construct a curve $\alpha\:[0,1]\to\RR^2$ which is not rectifiable.
+Construct a nonrectifiable curve $\alpha\:[0,1]\to\RR^2$.
+\end{thm}
+
+A closed simple plane curve is called \emph{convex} if it bounds a convex figure.
+
+\begin{thm}{Proposition}\label{prop:convex-curve}
+Assume a convex figure $A$ bounded by a curve $\alpha$ lies in a figure $B$ bounded by a curve $\beta$.
+Then
+\[\length\alpha\le \length\beta.\]
+\end{thm}
+
+Note that it is sufficient to show that for any polygon  $P$ inscribed in $\alpha$ there is a polygon $Q$ inscribed in $\beta$ such that 
+$\perim P\le \perim Q$, where $\perim P$ denotes the perimeter of $P$.
+
+Therefore it is sufficient to prove the following lemma.
+
+\begin{thm}{Lemma}\label{lem:perimeter}
+Let $P$ and $Q$ be polygons.
+Assume $P$ is convex and $Q\supset P$.
+Then $\perim P\le \perim Q$.
+\end{thm}
+
+\begin{wrapfigure}{r}{24 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-7}
+%\caption*{}
+\end{wrapfigure}
+
+\parit{Proof.}
+Note that by triangle inequality,
+the inequality
+\[\perim P\le \perim Q\]
+holds
+if $P$ can be obtained from $Q$ by cutting it along a chord;
+that is, the boundary curve of $P$ is formed by a part of boundary curve of $Q$ and one line segment lying in $Q$.
+
+
+
+
+Now note that there is an increasing sequence of polygons 
+$$P=P_0\subset P_1\subset\dots\subset P_n=Q$$
+such that $P_{i-1}$ obtained from $P_{i}$ by cutting along a chord.
+Therefore 
+\begin{align*}
+\perim P=\perim P_0&\le\perim P_1\le\dots
+\\
+\dots&\le\perim P_n=\perim Q
+\end{align*}
+and the lemma follows.
+\qeds
+
+\begin{thm}{Corollary}
+Any convex closed curve is rectifiable.  
+\end{thm}
+
+\parit{Proof.}
+Any closed curve is bounded; that is, it lies in a sufficiently large square.
+It remains to apply Proposition~\ref{prop:convex-curve}.
+\qeds
+
+
+\section{Crofton formula}
+
+Let $\alpha$ be a plane curve and $u$ is a unit vector.
+Denote by $\alpha_u$ the orthogonal projection of $\alpha$ to a line $\ell$ in the direction of $u$;
+that is, $\alpha_u(t)\in\ell$ and $\alpha(t)-\alpha_u(t)\perp \ell$ for any $t$.
+
+\begin{thm}{Crofton formula}
+The length of any plane curve $\alpha$ is proportional to the average of lengths of its projection $\alpha_u$ for all unit vectors $u$.
+Moreover for any plane curve $\alpha$ we have
+\[\length\alpha=\tfrac\pi2\cdot\overline{\length \alpha_u},\]
+where $\overline{\length \alpha_u}$ denotes the average value of $\length \alpha_u$.
+\end{thm}
+
+\parit{Proof.}
+Let us show that there is a coefficient $k$ such that 
+\[\length\alpha=k\cdot\overline{\length \alpha_u},\eqlbl{eq:crofton-k}\]
+
+If $\alpha$ is a line segment of length $\ell$,
+then the length of $\alpha_u$ is $\ell\cdot f(\phi)$, where $\phi$ is the angle between $u$ and $\alpha$.\footnote{In fact $f(\phi)=\cos(\phi)$, but we do not need it in the proof.}
+Hence \ref{eq:crofton-k} holds for any line segment.
+
+Length of polygonal line is the sum of lengths of its segments, the same holds for the right hand side of the formula.
+Therefore \ref{eq:crofton-k} holds for any polygonal line.
+
+Applying the definition of length, we get that 
+\[\length\alpha\le k\cdot\overline{\length \alpha_u}.\]
+
+It remains to prove the opposite inequality. 
+Without loss of generality we may assume that $\alpha\:[a,b]\to\RR^2$ is rectifiable.
+In this case, given $\eps>0$ there is a partition $a= t_0<t_1<\dots<t_n=b$ such that 
+\[\Sigma=|\alpha(t_0)-\alpha(t_1)|+\dots+|\alpha(t_{k-1})-\alpha(t_k)|>\length\alpha -\eps.\]
+Note that in this case 
+\[\Sigma_u=|\alpha_u(t_0)-\alpha_u(t_1)|+\dots+|\alpha_u(t_{k-1})-\alpha_u(t_k)|>\length\alpha_u -\eps.\]
+for any $u$.
+Therefore 
+\[\length\alpha\ge \Sigma=k\cdot \overline{\Sigma_u}\ge k\cdot \overline{\length\alpha_u}-k\cdot \eps.\]
+The statement follows since  $\eps>0$ is arbitrary, the statement follows.
+
+Let us apply \ref{eq:crofton-k} to the unit circle.
+The circle has length $2\cdot\pi$ and its projection to any line has length 4 --- it is a segment of length 2 traveled back and forth.
+Therefore $2\cdot \pi=k\cdot 4$ and hence $k=\tfrac\pi2$.
+\qeds
+
+\begin{thm}{Exercise}
+Come up with an a Crofton formula for curves in the unit sphere.
 \end{thm}
 
 
-\begin{thm}{Semicontinuity of length}\label{thm:length-semicont}
+
+Let us use Crofton formula to give an other proof of Proposition~\ref{prop:convex-curve}.
+
+\parit{Alternative proof of Proposition~\ref{prop:convex-curve}.}
+Note that 
+\[\length \beta_u\ge \length \alpha_u\]
+for any unit vector $u$.
+Indeed $\alpha_u$ runs back and forth along a line segment and $\beta_u$ has to run at least as much.
+
+It follows that 
+\[\overline{\length \beta_u}\ge \overline{\length \alpha_u}.\]
+It remains to apply Crofton formula.
+\qeds
+
+
+\section{Semicontinuity of length}
+
+
+\begin{thm}{Theorem}\label{thm:length-semicont}
 Length is a lower semi-continuous functional on the space of curves
 $\alpha\:\II\to \RR^2$ with respect to point-wise convergence. 
 
@@ -285,10 +369,5 @@ $$\liminf_{n\to\infty} \length\alpha_n \ge \length\alpha_\infty-\eps.$$
 Since $\eps>0$ is arbitrary, we get \ref{eq:semicont-length}.\qeds
 
 
-\begin{thm}{Exercise}
-Assume a convex figure $A$ bounded by a curve $\alpha$ lies in a figure $B$ bounded by a curve $\beta$.
-Show that 
-\[\length\alpha\le \length\beta.\]
-\end{thm}
 
 
