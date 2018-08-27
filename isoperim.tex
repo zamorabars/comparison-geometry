@@ -270,11 +270,18 @@ Applying the definition of length, we get that
 
 It remains to prove the opposite inequality. 
 Without loss of generality we may assume that $\alpha\:[a,b]\to\RR^2$ is rectifiable.
-In this case, given $\eps>0$ there is a partition $a= t_0<t_1<\dots<t_n=b$ such that 
+In this case, given $\eps>0$ there is a partition $a= t_0<t_1<\dots<t_k=b$ such that 
 \[\Sigma=|\alpha(t_0)-\alpha(t_1)|+\dots+|\alpha(t_{k-1})-\alpha(t_k)|>\length\alpha -\eps.\]
 Note that in this case 
 \[\Sigma_u=|\alpha_u(t_0)-\alpha_u(t_1)|+\dots+|\alpha_u(t_{k-1})-\alpha_u(t_k)|>\length\alpha_u -\eps.\]
 for any $u$.
+
+Indeed, assume contrary, then there is a sequence $a=t_0'<t_1'\dots<t_m'=b$ such that
+\[\Sigma_u|\le \alpha_u(t'_0)-\alpha_u(t'_1)|+\dots+|\alpha_u(t'_{m-1})-\alpha_u(t'_m)| -\eps.\]
+Without loss of generality we can assume that partition $a=t_0'<t_1'\dots<t_m'=b$ is a refinement of $a= t_0<t_1<\dots<t_k=b$;
+that is any $t_i$ appears in the list $t_0',\dots,t_m'$.
+
+
 Therefore 
 \[\length\alpha\ge \Sigma=k\cdot \overline{\Sigma_u}\ge k\cdot \overline{\length\alpha_u}-k\cdot \eps.\]
 The statement follows since  $\eps>0$ is arbitrary, the statement follows.
