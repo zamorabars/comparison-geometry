@@ -179,6 +179,7 @@ z.s=.5[z.u,z.v];
 draw z.r--z.s;
 
 hatchfill z.r--z.s--z.w--z.y--z.p--cycle  withcolor (87, 1mm, -.5bp);
+draw z.r--z.s--z.w--z.y--z.p--cycle penbold;
 
 endfig;
 end
