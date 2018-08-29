@@ -182,4 +182,28 @@ hatchfill z.r--z.s--z.w--z.y--z.p--cycle  withcolor (87, 1mm, -.5bp);
 draw z.r--z.s--z.w--z.y--z.p--cycle penbold;
 
 endfig;
+
+beginfig(8) 
+save u;
+u:=1cm;
+
+z.a=origin;
+z.b=(1,0)*u;
+z.c=(1,1)*u;
+z.d=(0,2)*u;
+
+save p; path p[];
+
+p0=z.a..z.b..z.c..z.d;
+p1=p0 rotatedabout (z.b, -angle(z.c-z.b));
+p2=p1 rotatedabout (point 2 of p1, -angle( (point 3 of p1) - (point 2 of p1)));
+
+draw p0 penbold;
+draw z.b--z.c--z.d dashed evenly;
+draw z.a--point 3 of p2 dashed evenly;
+draw subpath (1,2) of p1 penbold;
+draw subpath (2,3) of p2 penbold;
+
+endfig;
+
 end

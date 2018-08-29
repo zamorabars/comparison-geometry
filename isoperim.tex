@@ -135,7 +135,7 @@ Find the places with cheating in the proof above and try to fix them.
 
 
 
-\section{Length of curves}
+\chapter{Length of curves}
 
 \begin{thm}{Definition}\label{def:curve}
 A \emph{plane curve}\index{plane curve} is a continuous mapping $\alpha\:[a,b]\z\to \RR^2$,
@@ -256,7 +256,7 @@ where $\liminf_{n\to\infty}a_n$ denotes the lower limit; that is the lowest limi
 
 
 \begin{wrapfigure}{r}{20 mm}
-\vskip-4mm
+\vskip-0mm
 \centering
 \includegraphics{mppics/pic-6}
 \end{wrapfigure}
@@ -345,7 +345,7 @@ Then $\ell(\alpha)=\length \alpha$ for any plane curve $\alpha$.
 
 \parit{Proof.}
 Note that from normalization and additivity, the identity 
-\[\ell(\beta)=\length \beta\]
+\[\ell(\beta)=\length \beta\eqlbl{eq:=poly}\]
 holds for any polyhonal line $\beta$ that is linear on each edge.
 
 Fix a curve $\alpha\:[a,b]\to \RR^2$ and a partition $a=t_0\z<t_1\z<\z\dots\z<t_k=b$. 
@@ -355,7 +355,7 @@ Note that
 
 Since the map  $\alpha\:[a,b]\to \RR^2$ is continuous,
 one can find a sequence of partitions of $[a,b]$ such that the corresponding curves $\beta_n$ converge to $\alpha$ pointwise.
-Applying semi-continuity of $\ell$ and the definition of length, we get that 
+Applying semi-continuity of $\ell$, \ref{eq:=poly} and the definition of length, we get that 
 \begin{align*}
 \ell(\alpha)&\le \liminf_{n\to\infty}\ell(\beta_n)=
 \\
@@ -363,6 +363,12 @@ Applying semi-continuity of $\ell$ and the definition of length, we get that
 \\
 &\le\length \alpha.
 \end{align*}
+
+\begin{wrapfigure}{r}{36 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-8}
+\end{wrapfigure}
 
 It remains to prove the opposite inequality.
 Note that a curve $\alpha\:[a,b]\to \RR^2$ with a partition $a=t_0\z<t_1\z<\z\dots\z<t_k=b$ can be considered as a concatenation
@@ -431,7 +437,8 @@ It is straightforward to check the remaining properties exept the normalization;
 It remains to find $k$.
 Let us apply \ref{eq:crofton-k} to the unit circle.
 The circle has length $2\cdot\pi$ and its projection to any line has length 4 --- it is a segment of length 2 traveled back and forth.
-Therefore $2\cdot \pi=k\cdot 4$ and hence $k=\tfrac\pi2$.
+Therefore \[2\cdot \pi=k\cdot 4;\]
+hence $k=\tfrac\pi2$.
 \qeds
 
 \begin{thm}{Exercise}
