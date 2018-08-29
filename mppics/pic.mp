@@ -190,7 +190,7 @@ u:=1cm;
 z.a=origin;
 z.b=(1,0)*u;
 z.c=(1,1)*u;
-z.d=(0,2)*u;
+z.d=(0,1.5)*u;
 
 save p; path p[];
 

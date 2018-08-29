@@ -153,7 +153,9 @@ everywhere except the ends; that is, if
 $\alpha(t)=\alpha(t')$ for $t<t'$ then $t=a$ and $t'=b$.
 \end{thm}
  
-
+Recall that a sequence 
+\[a=t_0 < t_1 < \cdots < t_k=b.\]
+is called \emph{partition} of interval $[a,b]$.
 
 \begin{thm}{Definition}\label{def:length}
 Let $\alpha\:[a,b]\to \RR^2$ be a curve.
@@ -165,14 +167,13 @@ The \emph{length}\index{length of curve} of $\alpha$ is defined as
 \\
 &\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \dots+|\alpha(t_{k-1})-\alpha(t_k)|\}. 
 \end{align*}
-where the exact upper bound is taken over all $k$ and all sequences
+where the exact upper bound is taken over all partitions
 \[a=t_0 < t_1 < \cdots < t_k=b.\]
-(Such sequences called \emph{partitions} of $[a,b]$.)
 
 A curve is called \emph{rectifiable}\index{rectifiable curve} if its length is finite.
 \end{thm}
 
-In other words length of curve is the exact upper bound of lengths of polygonal lines \emph{inscribed} in the curve.
+Informally, one could say that the length of curve is the exact upper bound of lengths of polygonal lines \emph{inscribed} in the curve.
 
 \begin{thm}{Exercise}
 Assume $\alpha\:[a,b]\to\RR^2$ is smooth curve, in particular the velocity vector $\alpha'(t)$ is defined and depends continuously on $t$.
@@ -441,12 +442,6 @@ Therefore \[2\cdot \pi=k\cdot 4;\]
 hence $k=\tfrac\pi2$.
 \qeds
 
-\begin{thm}{Exercise}
-Come up with a Crofton formula for curves in the unit sphere.
-\end{thm}
-
-
-
 Let us use Crofton formula to give an other proof of Proposition~\ref{prop:convex-curve}.
 
 \parit{Alternative proof of Proposition~\ref{prop:convex-curve}.}
@@ -459,6 +454,62 @@ It follows that
 \[\overline{\length \beta_u}\ge \overline{\length \alpha_u}.\]
 It remains to apply Crofton formula.
 \qeds
+
+An oriented line can be characterized by the angle $w$ to the chosen direction  and the distance $\rho$ from the origin taken with sign --- it is positive if $w$ points counterclockwise, negative if clockwise.
+The vector $w$ can be described by angle to a fixed direction.
+Hence any oriented line can be described by a pair $(\phi,\rho)\in (-\pi,\pi]\times \RR$; denote this line by $\ell(\phi,\rho)$.
+
+For a curve $\alpha$  set $n_\alpha(\phi,\rho)$ to be the number of parameter values $t$ such that $\alpha(t)$ lies on the line $\ell(\phi,\rho)$. 
+The value $n_\alpha(\phi,\rho)$ has to be nonnegative integer or $\infty$.
+Note that if $\alpha$ is simple curve then $n_\alpha(\ell)$ is the number of intersections of $\alpha$ with $\ell$.
+
+
+\begin{thm}{Reformulation of Crofton formula}
+For any curve $\alpha$,
+\[\length\alpha=\int_{(-\pi,\pi]\times \RR} n_\alpha(\rho,\phi)\cdot d\rho\cdot d\phi.\]
+\end{thm}
+
+The proof of this reformulation of the Crofton formula relies on the following observation.
+
+\begin{thm}{Observation}
+If $u\perp \ell(\phi,\rho)$, then 
+\[\length\alpha_u=\int_\RR n_\alpha(\rho,\phi)\cdot d\rho.\]
+\end{thm}
+   
+
+\begin{thm}{Exercise}
+Come up with a Crofton formula for curves in the unit sphere.
+\end{thm}
+
+Recall that diameter of a plane figure $F$ is defined as the least upper bound on the distances between pairs of its points;
+that is,
+\[\diam F=\sup\set{|x-y|}{x,y\in F}.\]
+
+The equilateral triangle with side 1 gives an example of convex figure of diameter 1 that can not be covered by a round disc of diameter~1.
+
+\begin{thm}{Exercise} 
+Assume $F$ is a convex figure of diameter 1 and $D$ is the round disc of diameter 1.
+Show that
+\[\perim F\le \perim D.\]
+\end{thm}
+
+A convex figure $F$ has constant width $a$ if the orthogonal projection of $F$ to any line has length $a$.
+There are many non-circular shapes of constant width. 
+A nontrivial example is the Reuleaux triangle shown on the picture.
+
+\begin{thm}{Exercise} 
+Show that figures has constant width $a$ have the same perimeter, which is equal to $\pi\cdot a$.
+\end{thm}
+
+\begin{thm}{Exercise} 
+Let $\gamma$ be a closed curve in the unit sphere of length smalle than $2\cdot\pi$.
+Show that $\gamma$ lies in a hemisphere.
+\end{thm}
+
+\begin{thm}{Exercise} 
+Let $\alpha$ be a closed curve of length $\pi$.
+Show that it lies between a pair of parallel lines on distance $1$ from each other.
+\end{thm}
 
 
 
