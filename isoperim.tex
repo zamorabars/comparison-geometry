@@ -4,10 +4,10 @@
 
 For any plane figure $F$ with perimeter $\ell$, its area $a$ satisfies the following inequality:
 \[4\pi\cdot  a \le \ell^2.\eqlbl{eq:plane-isop}\]
-Moreover the equality holds if $F$ is congruent to a round disc.
+Moreover the equality holds iff $F$ is congruent to a round disc.
 
-This is so-called \emph{isoperimetric inequality} on the plane.
-Let us reformulate it without formulas, using the comparison language.
+This is the so-called \emph{isoperimetric inequality} on the plane.
+Let us restate it without formulas, using the comparison language.
 
 \begin{thm}{Isoperimetric inequality}
 The area of plane figure bounded by a closed curve of length $\ell$ can not exceed the area of round disc with the same circumference $\ell$.
@@ -16,7 +16,7 @@ Moreover the equality holds only if the figure is congruent to the disc.
 
 The comparison reformulation has some advantages --- it is more intuitive and it is also easier to generalize. 
 
-\begin{thm}{Exercise} Come up with a formulation of isoperimetric inequality on the units sphere. 
+\begin{thm}{Exercise} Come up with a formulation of the isoperimetric inequality on the unit sphere. 
 Try to reformulate it as an algebraic inequality similar to \ref{eq:plane-isop}.
 \end{thm}
 
@@ -40,7 +40,7 @@ Show that there is a convex figure $F'\supset F$ bounded by a closed curve of le
 The following problem is named after Dido, the legendary founder and first queen of Carthage.
 
 \begin{thm}{Dido's problem}
-A figure of the maximal area bounded by a straight line and a curve of given length with endpoints on that line is a half-disc.
+The figure of maximal area bounded by a straight line and a curve of given length with endpoints on that line is a half-disc.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:dido-isop}
@@ -50,11 +50,12 @@ Show that Dido's problem follows from the isoperimetric inequality and the other
 
 \begin{thm}{Exercise}
 Use the isoperimetric inequality in the plane to show that 
-inscribed convex polygons have maximal area among all the polygons with the given sides.
+among all the polygons with the given sides,
+the convex polygons inscribed in a circle have maximal area.
 \end{thm}
 
 \begin{thm}{Exercise}
-Find the minimal length of curve that divides the unit square in the given ratio $\alpha$.  
+Find the minimal length of a curve that divides the unit square in a given ratio $\alpha$.  
 \end{thm}
 
 \section{Lawlor's proof}
@@ -72,9 +73,9 @@ Before getting into the proof, try to solve the following exercise.
 \end{wrapfigure}
 
 \begin{thm}{Exercise}
-An old man walks along a trail around a convex meadows and pulls a brick on a rope of unit length (the rope is always strained).
+An old man walks along a trail around a convex meadows and pulls a brick tied to a rope of unit length (the rope is always strained).
 After walking around he noticed that the brick is at the same position as at the beginning.
-Show that the area between the trail and the path of the brick equals to the area of the unit disc. 
+Show that the area between the trail and the path of the brick equals the area of the unit disc. 
 
 \end{thm}
 
@@ -85,7 +86,7 @@ Let $F$ be a convex figure bounded by a line and a curve $\gamma(t)$ of length $
 we can assume that $\gamma$ is a unit speed curve so the set of parameters is $[0,\ell]$.
 
 Imagine that we are walking along the curve with a stick of length $r$ so that the other end of the stick drags on the flow.
-Assume that at initially $t=0$ the stick points in the direction of $\gamma(\ell)$ --- the other end of $\gamma$.
+Assume that initially at $t=0$ the stick points in the direction of $\gamma(\ell)$ --- the other end of $\gamma$.
 
 \begin{wrapfigure}{r}{34 mm}
 \vskip-0mm
@@ -99,31 +100,31 @@ Assume that at initially $t=0$ the stick points in the direction of $\gamma(\ell
 \includegraphics{mppics/pic-5}
 \end{wrapfigure}
 
-Note that is $r$ is small then most of the time we drag the stick behind. Therefore at the end of walk the stick will make more than half turn and will point to the same side of the figure.
+Note that if $r$ is small then most of the time we drag the stick behind. Therefore at the end of the walk the stick will have made more than half turn and will point to the same side of the figure.
 
-Let $R$ be the radius of half-circle $\tilde\gamma(t)$ of length $\ell$.
-Assume we walk along $\tilde\gamma$  with a stick as or length $R$ the same way as described above.
-Note that the other end does not move (it always lies in the center) and the direction of stick changes with rate $\tfrac1R$.
-Note further for $\gamma$ this rate would be at most $\tfrac1R$.
+Let $R$ be the radius of the half-circle $\tilde\gamma(t)$ of length $\ell$.
+Assume we walk along $\tilde\gamma$  with a stick of length $R$ the same way as described above.
+Note that the other end does not move (it always lies in the center) and the direction of the stick changes with rate $\tfrac1R$.
+Note further that for $\gamma$ this rate is at most $\tfrac1R$.
 Therefore after walking along $\gamma$,
 the stick of length $R$ will rotate at most as much as if we would walk along $\tilde\gamma$.
 
-It follows that there is a positive value $r\z\le R$ such that after walking along $\gamma$, a stick of length $r$ will rotate exactly half turn, so it will point in the direction of $\gamma(0)$.
+It follows that there is a positive value $r\z\le R$ such that after walking along $\gamma$ with a stick of length $r$, it will rotate exactly half turn, so at the end it will point towards $\gamma(0)$.
 
 Imagine that the stick of length $r$ is covered with red paint and it paints the area below it.
-If we move with velocity $v$ then angular velocity (radians per second) of the stick is at most $\tfrac vr$ the equality hold if we move perpendicularly to the stick.
-Therefore we paint at the rate at most most $\tfrac12 v\cdot r$.
+If we move with velocity $v$ then the angular velocity (radians per second) of the stick is at most $\tfrac vr$ and the equality holds if we move perpendicularly to the stick.
+Therefore we paint at a rate of at most $\tfrac12 v\cdot r$.
 
-If we do the same for the half-disc of radius $R$ and stick of length $R$ with blue paint,
-then we paint area of disc without overlap with the rate $\tfrac12 v\cdot R$.
+If we do the same for the half-disc of radius $R$ and a stick of length $R$ with blue paint,
+then we paint the area of the disc without overlap with the rate $\tfrac12 v\cdot R$.
 Since $r\le R$, the total red-painted area can not exceed the blue-painted area, that is, $D$. 
 
 It remains to show that all $F$ is red-painted.
 Fix a point $p\in F$.
 Notice that at the beginning the point $p$ lies on the left from the stick and at the end it lies on the right form it.
-Therefore it will be a moment of time $t_0$ when the sides change from left to right.
+Therefore there will be a moment $t_0$ when the side changes from left to right.
 At this time the point must be on the line containing the stick. 
-Moreover if it lies on the extension then the sides change from right to left. Therefore $p$ have to lie under the stick; that is, $p$ is painted.
+Moreover, if it lies on the extension then the side changes from right to left. Therefore $p$ has to lie under the stick; that is, $p$ is painted.
 \qeds
 
 \begin{thm}{Exercise}
@@ -146,7 +147,7 @@ we say that $\alpha$ is a \emph{curve from $p$ to $q$}\index{curve from $p$ to $
 
 A curve $\alpha\:[a,b]\to \RR^2$ is called \emph{closed} if $\alpha(a)=\alpha(b)$.
 
-A curve $\alpha$ called \emph{simple} if it is described by an injective map;
+A curve $\alpha$ called \emph{simple} if it is an injective map;
 that is $\alpha(t)=\alpha(t')$ if and only if $t=t'$.
 However, a closed curve $\alpha\:[a,b]\to \RR^2$ is called simple if it is injective 
 everywhere except the ends; that is, if
@@ -172,10 +173,10 @@ where the exact upper bound is taken over all $k$ and all sequences
 A curve is called \emph{rectifiable}\index{rectifiable curve} if its length is finite.
 \end{thm}
 
-In other words length of curve is the exact upper bound of lengths of polygonal lines \emph{inscribed} in the curve.
+In other words, the length of a curve is the exact upper bound of the lengths of polygonal lines \emph{inscribed} in the curve.
 
 \begin{thm}{Exercise}
-Assume $\alpha\:[a,b]\to\RR^2$ is smooth curve, in particular the velocity vector $\alpha'(t)$ is defined and depends continuously on $t$.
+Assume $\alpha\:[a,b]\to\RR^2$ is a smooth curve, in particular, the velocity vector $\alpha'(t)$ is defined and depends continuously on $t$.
 Show that
 \[\length \alpha=\int_a^b|\alpha'(t)|\cdot dt.\]
 \end{thm}
@@ -187,12 +188,12 @@ Construct a nonrectifiable curve $\alpha\:[0,1]\to\RR^2$.
 A closed simple plane curve is called \emph{convex} if it bounds a convex figure.
 
 \begin{thm}{Proposition}\label{prop:convex-curve}
-Assume a convex figure $A$ bounded by a curve $\alpha$ lies in a figure $B$ bounded by a curve $\beta$.
+Assume a convex figure $A$ bounded by a curve $\alpha$ lies inside a figure $B$ bounded by a curve $\beta$.
 Then
 \[\length\alpha\le \length\beta.\]
 \end{thm}
 
-Note that it is sufficient to show that for any polygon  $P$ inscribed in $\alpha$ there is a polygon $Q$ inscribed in $\beta$ such that 
+Note that it is sufficient to show that for any polygon  $P$ inscribed in $\alpha$ there is a polygon $Q$ inscribed in $\beta$ with  
 $\perim P\le \perim Q$, where $\perim P$ denotes the perimeter of $P$.
 
 Therefore it is sufficient to prove the following lemma.
@@ -211,7 +212,7 @@ Then $\perim P\le \perim Q$.
 \end{wrapfigure}
 
 \parit{Proof.}
-Note that by triangle inequality,
+Note that by the triangle inequality,
 the inequality
 \[\perim P\le \perim Q\]
 holds
@@ -220,7 +221,7 @@ that is, the boundary curve of $P$ is formed by a part of boundary curve of $Q$ 
 
 Note that there is an increasing sequence of polygons 
 $$P=P_0\subset P_1\subset\dots\subset P_n=Q$$
-such that $P_{i-1}$ obtained from $P_{i}$ by cutting along a chord.
+such that $P_{i-1}$ is obtained from $P_{i}$ by cutting along a chord.
 Therefore 
 \begin{align*}
 \perim P=\perim P_0&\le\perim P_1\le\dots
@@ -248,10 +249,10 @@ Length is a lower semi-continuous with respect to point-wise convergence of curv
 More precisely, assume that a sequence
 of curves $\alpha_n\:[a,b]\to \RR^2$ converges point-wise 
 to a curve $\alpha_\infty\:[a,b]\to \RR^2$;
-that is, $\alpha_n(t)\z\to\alpha_\infty(t)$ for any fixed $t\in[a,b]$ and $n\to\infty$. 
+that is, $\alpha_n(t)\z\to\alpha_\infty(t)$ for any fixed $t\in[a,b]$ as $n\to\infty$. 
 Then 
 $$\liminf_{n\to\infty} \length\alpha_n \ge \length\alpha_\infty,\eqlbl{eq:semicont-length}$$
-where $\liminf_{n\to\infty}a_n$ denotes the lower limit; that is the lowest limit of subsequences of $a_n$.
+where $\liminf_{n\to\infty}a_n$ denotes the lower limit; that is the lowest limit among all converging subsequences of $a_n$.
 \end{thm}
 
 
@@ -261,8 +262,9 @@ where $\liminf_{n\to\infty}a_n$ denotes the lower limit; that is the lowest limi
 \includegraphics{mppics/pic-6}
 \end{wrapfigure}
 
-Note that the inequality \ref{eq:semicont-length} might be strict.
-For example the diagonal of unit square $\alpha_\infty$ 
+Note that the inequality \ref{eq:semicont-length}%the numbering for the equations is preserved from the previous chapter and it does not coincide with what it should be
+might be strict.
+For example the diagonal of the unit square $\alpha_\infty$ 
 can be  approximated by a sequence of stairs-like
 polygonal curves $\alpha_n$
 with sides parallel to the sides of the square,
@@ -273,7 +275,7 @@ In this case
 for all $n$.
 
 \parit{Proof.}
-Fix $\eps > 0$ and choose a sequence $a=t_0<t_1<\dots<t_k=b$
+Fix $\eps > 0$ and choose a partition $a=t_0<t_1<\dots<t_k=b$
 such that 
 \begin{align*}
 \length\alpha_\infty-
@@ -300,23 +302,23 @@ Note that $\Sigma_n\to \Sigma_\infty$ as $n\to\infty$
 and $\Sigma_n\le\length\alpha_n$ for each $n$.
 Hence
 $$\liminf_{n\to\infty} \length\alpha_n \ge \length\alpha_\infty-\eps.$$
-Since $\eps>0$ is arbitrary, we get \ref{eq:semicont-length}.\qeds
+Since $\eps>0$ is arbitrary, we get \ref{eq:semicont-length}.\qeds%same here with the equations.
 
 \section{Axioms of length}
 
 Assume $\alpha\:[a,b]\to \RR^2$ and $\beta\:[b,c]\z\to \RR^2$ are two curves such that $\alpha(b)=\beta(b)$.
-Then one can combine these two curves in one $\gamma\:[a,c]\z\to \RR^2$ the assuming that $\gamma(t)=\alpha(t)$ for $t\le b$ and $\gamma(t)\ge\beta(t)$ for $t\ge b$.
+Then one can combine these two curves into one $\gamma\:[a,c]\z\to \RR^2$ by the rule $\gamma(t)=\alpha(t)$ for $t\le b$ and $\gamma(t)=\beta(t)$ for $t\ge b$.
 The obtained curve $\gamma$ is called the 
-\emph{concatenation} of $\alpha$ and $\beta$ which can be written as $\gamma=\alpha*\beta$.
+\emph{concatenation} of $\alpha$ and $\beta$, and is denoted as $\gamma=\alpha*\beta$.
 Note that if the concatenation $\alpha*\beta$ is defined, then
 \[\length(\alpha*\beta)=\length\alpha+\length\beta.\]
 
 Assume $\alpha\:[a,b]\to \RR^2$ is a curve and $\tau\:[c,d]\to [a,b]$ is a continuous strictly monotonic onto map.
 Consider the curve $\alpha'\:[c,d]\to \RR^2$ defined by $\alpha'=\alpha\circ\tau$.
-The curves $\alpha'$ is called \emph{reparametrization} of $\alpha$.
+The curve $\alpha'$ is called a \emph{reparametrization} of $\alpha$.
 Note that 
 \[\length\alpha'=\length\alpha\]
-if $\alpha'$ is a reparametrization of $\alpha$.
+whenever $\alpha'$ is a reparametrization of $\alpha$.
 
 
 
@@ -330,13 +332,13 @@ Assume it satisfies the following properties
 \[\ell(\alpha)=|\alpha(a)-\alpha(b)|.\]
 \item\label{Additivity} (Additivity) If the concatenation $\alpha*\beta$ is defined, then
 \[\ell(\alpha*\beta)=\ell(\alpha)+\ell(\beta).\]
-\item\label{Motion invariance} (Motion invariance) The functional $\ell$ is invariant with respect to the motions of the plane; that is, if $m$ is a motion then 
+\item\label{Motion invariance} (Motion invariance) The functional $\ell$ is invariant with respect to the motions of the plane; that is, if $m$ is an isometry of the plane, then 
 \[\ell(m\circ\alpha)=\ell(\alpha)\]
 for any curve $\alpha$.
 \item\label{Reparametrization invariance} (Reparametrization invariance) If $\alpha'$ is a reparametrization of a curve $\alpha$ then
 \[\ell(\alpha')=\ell(\alpha).\]
 (In fact linear reparametrizations will be sufficient.)
-\item\label{Semi-continuity} (Semi-continuity) If a sequence of curves $\alpha_n\:[a,b]\to \RR^2$ converges to a curve pointwise to a curve $\alpha_\infty\:[a,b]\to \RR^2$, then 
+\item\label{Semi-continuity} (Semi-continuity) If a sequence of curves $\alpha_n\:[a,b]\to \RR^2$ converges pointwise to a curve to a curve $\alpha_\infty\:[a,b]\to \RR^2$, then 
 \[\liminf_{n\to\infty} \ell(\alpha_n) \ge \ell(\alpha_\infty).\]
 \end{enumerate}
 Then $\ell(\alpha)=\length \alpha$ for any plane curve $\alpha$.
@@ -346,16 +348,17 @@ Then $\ell(\alpha)=\length \alpha$ for any plane curve $\alpha$.
 \parit{Proof.}
 Note that from normalization and additivity, the identity 
 \[\ell(\beta)=\length \beta\eqlbl{eq:=poly}\]
-holds for any polyhonal line $\beta$ that is linear on each edge.
+holds for any polygonal line $\beta$ that is linear on each edge.
 
 Fix a curve $\alpha\:[a,b]\to \RR^2$ and a partition $a=t_0\z<t_1\z<\z\dots\z<t_k=b$. 
-Consider the curve $\beta\:[a,b]\to \RR^2$ defined as a linear curve from $\alpha(t_i)$ to $\alpha(t_{i+1})$  on each segment $t\in[t_i,t_j]$.
+Consider the curve $\beta\:[a,b]\to \RR^2$ defined as the linear segment from $\alpha(t_i)$ to $\alpha(t_{i+1})$  on each interval $t\in[t_i,t_j]$.
 Note that 
 \[\length\beta=|\alpha(t_0)-\alpha(t_1)|+\dots+|\alpha(t_{k-1})-\alpha(t_k)|.\]
 
 Since the map  $\alpha\:[a,b]\to \RR^2$ is continuous,
 one can find a sequence of partitions of $[a,b]$ such that the corresponding curves $\beta_n$ converge to $\alpha$ pointwise.
-Applying semi-continuity of $\ell$, \ref{eq:=poly} and the definition of length, we get that 
+Applying the semi-continuity of $\ell$, \ref{eq:=poly}%equation numbering problem again
+and the definition of length, we get that 
 \begin{align*}
 \ell(\alpha)&\le \liminf_{n\to\infty}\ell(\beta_n)=
 \\
@@ -370,23 +373,23 @@ Applying semi-continuity of $\ell$, \ref{eq:=poly} and the definition of length,
 \includegraphics{mppics/pic-8}
 \end{wrapfigure}
 
-It remains to prove the opposite inequality.
+It remains to show the opposite inequality.
 Note that a curve $\alpha\:[a,b]\to \RR^2$ with a partition $a=t_0\z<t_1\z<\z\dots\z<t_k=b$ can be considered as a concatenation
 \[\alpha=\alpha_1*\alpha_2*\dots*\alpha_k\]
 where $\alpha_i$ is the restriction of $\alpha$ to $[t_{i-1},t_i]$.
 
-Note that there is a sequence of motions $m_i$ of the plane so that $m_i\circ\alpha(t_i)=m_{i+1}\circ\alpha(t_i)$ for any $i$ and 
+Observe that there is a sequence of motions $m_i$ of the plane so that $m_i\circ\alpha(t_i)=m_{i+1}\circ\alpha(t_i)$ for any $i$ and 
 the points 
 \[m_1\circ\alpha(t_0), m_1\circ\alpha(t_1),\dots m_k\circ\alpha(t_k)\] 
 appear on a line in the same order.
-Note that for the concatenation 
+Then for the concatenation 
 \[\gamma=(m_1\circ\alpha_1)*(m_2\circ\alpha_2)*\dots*(m_k\circ\alpha_k)\]
 we have
 \[\ell(\gamma)=\ell(\alpha).\]
 
 Note that one can find a sequence of partitions of $[a,b]$ such that reparametrizations $\gamma'_n$ of 
-the corresponding curves $\gamma_n$ converge to linear curve $\gamma_\infty'$.
-We can assume in addition that $\length\gamma'_\infty=\length\alpha$;
+the corresponding curves $\gamma_n$ converge to a linear segment $\gamma_\infty'$. 
+Also, $\length\gamma'_\infty=\length\alpha$;
 indeed since $\gamma'_\infty$ is linear,
 \begin{align*}
 \length \gamma'_\infty&=|\gamma'(a)-\gamma'(b)|=
@@ -397,7 +400,7 @@ indeed since $\gamma'_\infty$ is linear,
 \end{align*}
 where $\Sigma_n$ is the sum in the definition of length for the $n$-th partition.
 
-Applying invariance of $\ell$ with respact to reparametizations, we get that
+Applying the invariance of $\ell$ with respact to reparametizations, we get that
 \begin{align*}
 \ell(\alpha)&=\lim_{n\to\infty}\ell(\gamma_n)=
 \\
@@ -419,7 +422,7 @@ Denote by $\alpha_u$ the orthogonal projection of $\alpha$ to a line $\ell$ in t
 that is, $\alpha_u(t)\in\ell$ and $\alpha(t)-\alpha_u(t)\perp \ell$ for any $t$.
 
 \begin{thm}{Crofton formula}
-The length of any plane curve $\alpha$ is proportional to the average of lengths of its projection $\alpha_u$ for all unit vectors $u$.
+The length of any plane curve $\alpha$ is proportional to the average of the lengths of its projections $\alpha_u$ for all unit vectors $u$.
 Moreover for any plane curve $\alpha$ we have
 \[\length\alpha=\tfrac\pi2\cdot\overline{\length \alpha_u},\]
 where $\overline{\length \alpha_u}$ denotes the average value of $\length \alpha_u$.
@@ -429,7 +432,7 @@ where $\overline{\length \alpha_u}$ denotes the average value of $\length \alpha
 First let us show that the formula 
 \[\length\alpha=k\cdot\overline{\length \alpha_u},\eqlbl{eq:crofton-k}\]
 holds for some fixed coefficient $k$.
-It will follow once we show that both sides of formula satisfies the length axioms in \ref{prop:length-axioms}.
+It will follow once we show that both sides of formula satisfy the length axioms in \ref{prop:length-axioms}.
 
 The semi-continuity of the right hand side follows since $\length\alpha_u$ is semi-continuous and therefore the average has to be semi-continuous.
 It is straightforward to check the remaining properties exept the normalization; the normalization needs a coefficient which we denote by~$k$.
@@ -447,13 +450,13 @@ Come up with a Crofton formula for curves in the unit sphere.
 
 
 
-Let us use Crofton formula to give an other proof of Proposition~\ref{prop:convex-curve}.
+Let us use Crofton formula to give another proof of Proposition~\ref{prop:convex-curve}.
 
 \parit{Alternative proof of Proposition~\ref{prop:convex-curve}.}
 Note that 
 \[\length \beta_u\ge \length \alpha_u\]
 for any unit vector $u$.
-Indeed $\alpha_u$ runs back and forth along a line segment and $\beta_u$ has to run at least as much.
+Indeed $\alpha_u$ runs back and forth along a line segment and $\beta_u$ runs at least that much.
 
 It follows that 
 \[\overline{\length \beta_u}\ge \overline{\length \alpha_u}.\]
