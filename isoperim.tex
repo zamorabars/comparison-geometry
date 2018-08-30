@@ -455,8 +455,11 @@ It follows that
 It remains to apply Crofton formula.
 \qeds
 
-An oriented line can be characterized by the angle $w$ to the chosen direction  and the distance $\rho$ from the origin taken with sign --- it is positive if $w$ points counterclockwise, negative if clockwise.
-The vector $w$ can be described by angle to a fixed direction.
+Let us give an other formulation of Crofton formula.
+
+Consider the space of oriented lines; 
+an oriented line can be characterized by its direction --- a unit vector $w$ and the distance $\rho$ from the origin taken with sign --- it is positive if $w$ points counterclockwise, negative if clockwise.
+The vector $w$ can be described by its angle $\phi$ to a fixed direction.
 Hence any oriented line can be described by a pair $(\phi,\rho)\in (-\pi,\pi]\times \RR$; denote this line by $\ell(\phi,\rho)$.
 
 For a curve $\alpha$  set $n_\alpha(\phi,\rho)$ to be the number of parameter values $t$ such that $\alpha(t)$ lies on the line $\ell(\phi,\rho)$. 
@@ -464,18 +467,22 @@ The value $n_\alpha(\phi,\rho)$ has to be nonnegative integer or $\infty$.
 Note that if $\alpha$ is simple curve then $n_\alpha(\ell)$ is the number of intersections of $\alpha$ with $\ell$.
 
 
-\begin{thm}{Reformulation of Crofton formula}
+\begin{thm}{Crofton formula via intersections}
 For any curve $\alpha$,
-\[\length\alpha=\int_{(-\pi,\pi]\times \RR} n_\alpha(\rho,\phi)\cdot d\rho\cdot d\phi.\]
+\[\length\alpha=\tfrac14\cdot\int_{(-\pi,\pi]\times \RR} n_\alpha(\rho,\phi)\cdot d\rho\cdot d\phi.\]
 \end{thm}
+
+In particular if $\alpha$ is rectifiable then most of lines intersect $\alpha$ at finite number of points.
 
 The proof of this reformulation of the Crofton formula relies on the following observation.
 
 \begin{thm}{Observation}
 If $u\perp \ell(\phi,\rho)$, then 
-\[\length\alpha_u=\int_\RR n_\alpha(\rho,\phi)\cdot d\rho.\]
+\[\length\alpha_u=\int_\RR n_\alpha(\rho,\phi)\cdot d\rho;\]
+the integral is to be understood in the sense of Lebesgue.
 \end{thm}
-   
+
+The proof is straightforward for those who understand Lebesgue integral.
 
 \begin{thm}{Exercise}
 Come up with a Crofton formula for curves in the unit sphere.
@@ -511,6 +518,14 @@ Let $\alpha$ be a closed curve of length $\pi$.
 Show that it lies between a pair of parallel lines on distance $1$ from each other.
 \end{thm}
 
+\begin{thm}{Exercise}
+A spaceship flies around nonrotating planet or unit radius and came back to the original position;
+it was able to make a picture of every point on the surface of the planet.
+
+Find a lower bound on the length of its trajectory (does not need to be exact).
+
+What do you think could be the shortest trajectory?
+\end{thm}
 
 
 
