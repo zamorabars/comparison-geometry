@@ -1,0 +1,23 @@
+\chapter{Curvature of curves}
+
+\section{Total curvature}
+
+Here we introduce the so called \emph{total curvature of curve}.
+In general term \emph{curvature} is used for something that measures how 
+a geometric object deviates from being a straight;
+total curvature is not an exception --- as you will see if the total curvature of a curve is vanishing then the curve runs along a straight line.
+
+
+Let $\alpha\:[a,b]\to\RR^3$ be a \emph{smooth} \emph{regular} curve --- smooth means that
+the velocity vector $\alpha'(t)$ is defined and continuous with respect to $t$ and regular means that $\alpha'(t)\ne 0$ for any $t$.
+If the curve $\alpha$ is closed then we assume in addition that $\alpha'(a)=\alpha'(b)$.
+
+Denote by $\tau(t)$ the unit vector in the direction of $\alpha'(t)$;
+that is, $\tau(t)=\tfrac{\alpha'(t)}{|\alpha'(t)|}$.
+The $\tau\:[a,b]\to\mathbb{S}^2$ is an other curve which is called \emph{tangent indicatrix} of $\alpha$.
+The length of $\tau$ is called \emph{total curvature of}~$\alpha$.
+
+\begin{thm}{Exercise}
+Show that the total curvature of any smooth closed regular curve $\alpha$ is at least $2\cdot\pi$.
+Moreover, the equality holds if and only if $\alpha$ is a colased and conex curve that lies in a plane.
+\end{thm}
