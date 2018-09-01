@@ -1,4 +1,8 @@
-\chapter{Length of curves}
+\chapter{Length}
+
+The material of this and the following chapters overlaps largely with \cite[Chapter 5]{fuchs-tabachnikov}.
+
+\section{Length of curve}
 
 \begin{thm}{Definition}\label{def:curve}
 A \emph{plane curve}\index{plane curve} is a continuous mapping $\alpha\:[a,b]\z\to \RR^2$,
@@ -404,9 +408,16 @@ Show that
 \[\perim F\le \perim D.\]
 \end{thm}
 
+\begin{wrapfigure}{r}{33 mm}
+\vskip-5mm
+\centering
+\includegraphics{mppics/pic-9}
+\end{wrapfigure}
+
 A convex figure $F$ has constant width $a$ if the orthogonal projection of $F$ to any line has length $a$.
 There are many non-circular shapes of constant width. 
-A nontrivial example is the Reuleaux triangle shown on the picture.
+A nontrivial example is the Reuleaux triangle shown on the picture;
+it is the intersection of three round disks, each having its center on the boundary of the other two.
 The following exercise is the so called Barbier's theorem.
 
 \begin{thm}{Exercise} 
@@ -431,3 +442,13 @@ Try to use the Crofton formulas to get a lower bound on the length of its trajec
 
 What do you think could be the shortest trajectory?
 \end{thm}
+
+Hausdorff distance $d_H(F,G)$ between closed bounded sets $F$ and $G$ in the plane is defined as the exact lower bound on $\eps>0$ such that $\eps$-neightborhood of $F$ contains $G$ and $\eps$-neightborhood of $G$ contains~$F$.
+
+\begin{thm}{Exercise}
+Assume $F$ and $G$ be two closed convex figures on the plane such that $d_H(F,G)<\eps$.
+Show that 
+\[|\perim F-\perim G|<2\cdot\pi\cdot\eps.\]
+
+\end{thm}
+

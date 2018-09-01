@@ -206,4 +206,22 @@ draw subpath (2,3) of p2 penbold;
 
 endfig;
 
+beginfig(9) 
+save u;
+u:=1cm;
+
+z.a=origin;
+z.b=(1,0)*u;
+z.c=z.b rotated 60;
+z.bc=z.b rotated 30;
+z.ab=z.a rotatedabout (z.c, 30);
+z.ca=z.c rotatedabout (z.b, 30);
+
+draw z.a..z.ab..z.b--z.b..z.bc..z.c--z.c..z.ca..z.a--cycle penbold;
+hatchfill z.a..z.ab..z.b--z.b..z.bc..z.c--z.c..z.ca..z.a--cycle  withcolor (77, 1mm, -.5bp);
+draw circle (z.a,z.b-z.a)  dashed evenly;
+draw circle (z.b,z.c-z.b)  dashed evenly;
+draw circle (z.c,z.a-z.c)  dashed evenly;
+
+endfig;
 end
