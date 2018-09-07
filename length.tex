@@ -1,33 +1,30 @@
+\chapter{Length}
 
+The material of this and the following chapters overlaps largely with \cite[Chapter 5]{fuchs-tabachnikov}.
 
-\chapter{Length of curves}
-
+\section{Length of curve}
 
 
 \begin{thm}{Definition}\label{def:curve}
 A \emph{plane curve}\index{plane curve} is a continuous mapping $\alpha\:[a,b]\z\to \RR^2$,
 where $\RR^2$ denotes the Euclidean plane. 
+
+
 If $\alpha(a)=p$ and $\alpha(b)=q$,
 we say that $\alpha$ is a \emph{curve from $p$ to $q$}\index{curve from $p$ to $q$}.
 
-
-
 A curve $\alpha\:[a,b]\to \RR^2$ is called \emph{closed} if $\alpha(a)=\alpha(b)$.
 
-A curve $\alpha$ called \emph{simple} if it is an injective map;
+A curve $\alpha$ called \emph{simple} if it is described by an injective map;
 that is $\alpha(t)=\alpha(t')$ if and only if $t=t'$.
-
 However, a closed curve $\alpha\:[a,b]\to \RR^2$ is called simple if it is injective 
 everywhere except the ends; that is, if
 $\alpha(t)=\alpha(t')$ for $t<t'$ then $t=a$ and $t'=b$.
-
 \end{thm}
-
  
-
-
-
-
+Recall that a sequence 
+\[a=t_0 < t_1 < \cdots < t_k=b.\]
+is called \emph{partition} of interval $[a,b]$.
 
 \begin{thm}{Definition}\label{def:length}
 Let $\alpha\:[a,b]\to \RR^2$ be a curve.
@@ -41,60 +38,36 @@ The \emph{length}\index{length of curve} of $\alpha$ is defined as
 &\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \dots+|\alpha(t_{k-1})-\alpha(t_k)|\}. 
 \end{align*}
 
-where the exact upper bound is taken over all $k$ and all sequences
-
+where the exact upper bound is taken over all partitions
 \[a=t_0 < t_1 < \cdots < t_k=b.\]
 
-(Such sequences called \emph{partitions} of $[a,b]$.)
-
-
-
 A curve is called \emph{rectifiable}\index{rectifiable curve} if its length is finite.
-
 \end{thm}
 
-
-
-In other words, the length of a curve is the exact upper bound of the lengths of polygonal lines \emph{inscribed} in the curve.
-
-
+Informally, one could say that the length of curve is the exact upper bound of lengths of polygonal lines \emph{inscribed} in the curve.
 
 \begin{thm}{Exercise}
-Assume $\alpha\:[a,b]\to\RR^2$ is a smooth curve, in particular, the velocity vector $\alpha'(t)$ is defined and depends continuously on $t$.
-
+Assume $\alpha\:[a,b]\to\RR^2$ is smooth curve, in particular the velocity vector $\alpha'(t)$ is defined and depends continuously on $t$.
 Show that
-
 \[\length \alpha=\int_a^b|\alpha'(t)|\cdot dt.\]
-
 \end{thm}
-
-
 
 \begin{thm}{Exercise}\label{ex:nonrectifiable-curve}
 Construct a nonrectifiable curve $\alpha\:[0,1]\to\RR^2$.
-
 \end{thm}
-
-
 
 A closed simple plane curve is called \emph{convex} if it bounds a convex figure.
 
-
-
 \begin{thm}{Proposition}\label{prop:convex-curve}
-Assume a convex figure $A$ bounded by a curve $\alpha$ lies inside a figure $B$ bounded by a curve $\beta$.
+Assume a convex figure $A$ bounded by a curve $\alpha$ lies in a figure $B$ bounded by a curve $\beta$.
 Then
-
 \[\length\alpha\le \length\beta.\]
-
 \end{thm}
 
-
-
-Note that it is sufficient to show that for any polygon  $P$ inscribed in $\alpha$ there is a polygon $Q$ inscribed in $\beta$ with  
+Note that it is sufficient to show that for any polygon  $P$ inscribed in $\alpha$ there is a polygon $Q$ inscribed in $\beta$ such that 
 $\perim P\le \perim Q$, where $\perim P$ denotes the perimeter of $P$.
-Therefore it is sufficient to prove the following lemma.
 
+Therefore it is sufficient to prove the following lemma.
 
 
 \begin{thm}{Lemma}\label{lem:perimeter}
@@ -104,23 +77,16 @@ Then $\perim P\le \perim Q$.
 \end{thm}
 
 
-
 \begin{wrapfigure}{r}{24 mm}
 \vskip-4mm
 \centering
-
 \includegraphics{mppics/pic-7}
-
 %\caption*{}
-
 \end{wrapfigure}
 
-
-
 \parit{Proof.}
-Note that by the triangle inequality,
+Note that by triangle inequality,
 the inequality
-
 \[\perim P\le \perim Q\]
 
 holds
@@ -128,31 +94,21 @@ if $P$ can be obtained from $Q$ by cutting it along a chord;
 that is, the boundary curve of $P$ is formed by a part of boundary curve of $Q$ and one line segment lying in $Q$.
 
 
-
 Note that there is an increasing sequence of polygons 
-
 $$P=P_0\subset P_1\subset\dots\subset P_n=Q$$
-
-such that $P_{i-1}$ is obtained from $P_{i}$ by cutting along a chord.
+such that $P_{i-1}$ obtained from $P_{i}$ by cutting along a chord.
 Therefore 
-
 \begin{align*}
 \perim P=\perim P_0&\le\perim P_1\le\dots
 \\
 \dots&\le\perim P_n=\perim Q
 \end{align*}
-
 and the lemma follows.
-
 \qeds
-
-
 
 \begin{thm}{Corollary}
 Any convex closed curve is rectifiable.  
 \end{thm}
-
-
 
 \parit{Proof.}
 Any closed curve is bounded; that is, it lies in a sufficiently large square.
@@ -160,28 +116,22 @@ By Proposition~\ref{prop:convex-curve}, the length of the curve can not exceed t
 \qeds
 
 
+
 \warning 
-
 \section{Semicontinuity of length}
-
-
-
 
 
 \begin{thm}{Theorem}\label{thm:length-semicont}
 Length is a lower semi-continuous with respect to point-wise convergence of curves. 
+
 More precisely, assume that a sequence
 of curves $\alpha_n\:[a,b]\to \RR^2$ converges point-wise 
 to a curve $\alpha_\infty\:[a,b]\to \RR^2$;
-that is, $\alpha_n(t)\z\to\alpha_\infty(t)$ for any fixed $t\in[a,b]$ as $n\to\infty$. 
+that is, $\alpha_n(t)\z\to\alpha_\infty(t)$ for any fixed $t\in[a,b]$ and $n\to\infty$. 
 Then 
-
 $$\liminf_{n\to\infty} \length\alpha_n \ge \length\alpha_\infty,\eqlbl{eq:semicont-length}$$
-
-where $\liminf_{n\to\infty}a_n$ denotes the lower limit; that is the lowest limit among all converging subsequences of $a_n$.
+where $\liminf_{n\to\infty}a_n$ denotes the lower limit; that is the lowest limit of subsequences of $a_n$.
 \end{thm}
-
-
 
 
 
@@ -192,37 +142,27 @@ where $\liminf_{n\to\infty}a_n$ denotes the lower limit; that is the lowest limi
 \end{wrapfigure}
 
 
+Note that the inequality \ref{eq:semicont-length} might be strict.
+For example the diagonal of unit square $\alpha_\infty$ 
 
-Note that the inequality \ref{eq:semicont-length}%the numbering for the equations is preserved from the previous chapter and it does not coincide with what it should be
-might be strict.
-For example the diagonal of the unit square $\alpha_\infty$ 
 can be  approximated by a sequence of stairs-like
 polygonal curves $\alpha_n$
 with sides parallel to the sides of the square,
 $\alpha_6$ is on the picture.
 In this case
-
 \[\length\alpha_\infty=\sqrt{2}\quad
 \text{and}\quad \length\alpha_n=2\]
-
 for all $n$.
 
-
-
 \parit{Proof.}
-Fix $\eps > 0$ and choose a partition $a=t_0<t_1<\dots<t_k=b$
+Fix $\eps > 0$ and choose a sequence $a=t_0<t_1<\dots<t_k=b$
 such that 
-
 \begin{align*}
 \length\alpha_\infty-
 (|\alpha_\infty(t_0)-\alpha_\infty(t_1)|&+|\alpha_\infty(t_1)-\alpha_\infty(t_2)|+\dots
 \\
 &\dots+|\alpha_\infty(t_{k-1})-\alpha_\infty(t_k)|)<\eps
 \end{align*}
-
-
-
-
 
 Set 
 \begin{align*}\Sigma_n
@@ -241,41 +181,29 @@ Set
 Note that $\Sigma_n\to \Sigma_\infty$ as $n\to\infty$
 and $\Sigma_n\le\length\alpha_n$ for each $n$.
 Hence
-
 $$\liminf_{n\to\infty} \length\alpha_n \ge \length\alpha_\infty-\eps.$$
-
-Since $\eps>0$ is arbitrary, we get \ref{eq:semicont-length}.\qeds%same here with the equations.
-
-
+Since $\eps>0$ is arbitrary, we get \ref{eq:semicont-length}.\qeds
 
 \section{Axioms of length}
 
-
-
+\parbf{Concatenation.}
 Assume $\alpha\:[a,b]\to \RR^2$ and $\beta\:[b,c]\z\to \RR^2$ are two curves such that $\alpha(b)=\beta(b)$.
-Then one can combine these two curves into one $\gamma\:[a,c]\z\to \RR^2$ by the rule $\gamma(t)=\alpha(t)$ for $t\le b$ and $\gamma(t)=\beta(t)$ for $t\ge b$.
+Then one can combine these two curves in one $\gamma\:[a,c]\z\to \RR^2$ by assuming that $\gamma(t)=\alpha(t)$ for $t\le b$ and $\gamma(t)\ge\beta(t)$ for $t\ge b$.
 The obtained curve $\gamma$ is called the 
-\emph{concatenation} of $\alpha$ and $\beta$, and is denoted as $\gamma=\alpha*\beta$.
+\emph{concatenation} of $\alpha$ and $\beta$ which can be written as $\gamma=\alpha*\beta$.
 
-Note that if the concatenation $\alpha*\beta$ is defined, then
+Note that
+\[\length(\alpha*\beta)=\length\alpha+\length\beta\]
+for any two curves $\alpha$ and $\beta$ such that the concatenation $\alpha*\beta$ is defined.
 
-\[\length(\alpha*\beta)=\length\alpha+\length\beta.\]
-
-
-
+\parbf{Reparametrization.}
 Assume $\alpha\:[a,b]\to \RR^2$ is a curve and $\tau\:[c,d]\to [a,b]$ is a continuous strictly monotonic onto map.
 Consider the curve $\alpha'\:[c,d]\to \RR^2$ defined by $\alpha'=\alpha\circ\tau$.
-The curve $\alpha'$ is called a \emph{reparametrization} of $\alpha$.
+The curves $\alpha'$ is called \emph{reparametrization} of $\alpha$.
 
 Note that 
-
 \[\length\alpha'=\length\alpha\]
-
-whenever $\alpha'$ is a reparametrization of $\alpha$.
-
-
-
-
+if $\alpha'$ is a reparametrization of $\alpha$.
 
 
 
@@ -283,69 +211,42 @@ whenever $\alpha'$ is a reparametrization of $\alpha$.
 
 \begin{thm}{Proposition}\label{prop:length-axioms}
 Let $\ell$ be a functional that returns a value in $[0,\infty]$ for any curve $\alpha\:[a,b]\to\RR$.
-Assume it satisfies the following properties
 
+Assume it satisfies the following properties:
 \begin{enumerate}[(i)]
-
 \item\label{Normalization} (Normalization) If $\alpha\:[a,b]\to \RR^2$ is a linear curve,%
-
 \footnote{That is $\alpha=w+v\cdot t$ for some vectors $w$ and $v$.} then
-
 \[\ell(\alpha)=|\alpha(a)-\alpha(b)|.\]
-
 \item\label{Additivity} (Additivity) If the concatenation $\alpha*\beta$ is defined, then
-
 \[\ell(\alpha*\beta)=\ell(\alpha)+\ell(\beta).\]
-
-\item\label{Motion invariance} (Motion invariance) The functional $\ell$ is invariant with respect to the motions of the plane; that is, if $m$ is an isometry of the plane, then 
-
+\item\label{Motion invariance} (Motion invariance) The functional $\ell$ is invariant with respect to the motions of the plane; that is, if $m$ is a motion then 
 \[\ell(m\circ\alpha)=\ell(\alpha)\]
-
 for any curve $\alpha$.
-
 \item\label{Reparametrization invariance} (Reparametrization invariance) If $\alpha'$ is a reparametrization of a curve $\alpha$ then
-
 \[\ell(\alpha')=\ell(\alpha).\]
-
 (In fact linear reparametrizations will be sufficient.)
-
-\item\label{Semi-continuity} (Semi-continuity) If a sequence of curves $\alpha_n\:[a,b]\to \RR^2$ converges pointwise to a curve to a curve $\alpha_\infty\:[a,b]\to \RR^2$, then 
-
+\item\label{Semi-continuity} (Semi-continuity) If a sequence of curves $\alpha_n\:[a,b]\to \RR^2$ converges to a curve pointwise to a curve $\alpha_\infty\:[a,b]\to \RR^2$, then 
 \[\liminf_{n\to\infty} \ell(\alpha_n) \ge \ell(\alpha_\infty).\]
-
 \end{enumerate}
-
-Then $\ell(\alpha)=\length \alpha$ for any plane curve $\alpha$.
-
-
+Then 
+\[\ell(\alpha)=\length \alpha\] 
+for any plane curve $\alpha$.
 
 \end{thm}
 
-
-
 \parit{Proof.}
 Note that from normalization and additivity, the identity 
-
 \[\ell(\beta)=\length \beta\eqlbl{eq:=poly}\]
-
-holds for any polygonal line $\beta$ that is linear on each edge.
-
-
+holds for any polyhonal line $\beta$ that is linear on each edge.
 
 Fix a curve $\alpha\:[a,b]\to \RR^2$ and a partition $a=t_0\z<t_1\z<\z\dots\z<t_k=b$. 
-Consider the curve $\beta\:[a,b]\to \RR^2$ defined as the linear segment from $\alpha(t_i)$ to $\alpha(t_{i+1})$  on each interval $t\in[t_i,t_j]$.
-
-Note that 
-
+Consider the curve $\beta\:[a,b]\to \RR^2$ defined as a linear curve from $\alpha(t_i)$ to $\alpha(t_{i+1})$  on each segment $t\in[t_i,t_j]$.
+Applying normalization and additivity, we get that
 \[\length\beta=|\alpha(t_0)-\alpha(t_1)|+\dots+|\alpha(t_{k-1})-\alpha(t_k)|.\]
-
-
 
 Since the map  $\alpha\:[a,b]\to \RR^2$ is continuous,
 one can find a sequence of partitions of $[a,b]$ such that the corresponding curves $\beta_n$ converge to $\alpha$ pointwise.
-Applying the semi-continuity of $\ell$, \ref{eq:=poly}%equation numbering problem again
-and the definition of length, we get that 
-
+Applying semi-continuity of $\ell$, \ref{eq:=poly} and the definition of length, we get that 
 \begin{align*}
 \ell(\alpha)&\le \liminf_{n\to\infty}\ell(\beta_n)=
 \\
@@ -354,51 +255,32 @@ and the definition of length, we get that
 &\le\length \alpha.
 \end{align*}
 
-
-
 \begin{wrapfigure}{r}{36 mm}
-
 \vskip-4mm
-
 \centering
-
 \includegraphics{mppics/pic-8}
-
 \end{wrapfigure}
 
-
-
-It remains to show the opposite inequality.
-
+It remains to prove the opposite inequality.
 Note that a curve $\alpha\:[a,b]\to \RR^2$ with a partition $a=t_0\z<t_1\z<\z\dots\z<t_k=b$ can be considered as a concatenation
-
 \[\alpha=\alpha_1*\alpha_2*\dots*\alpha_k\]
-
 where $\alpha_i$ is the restriction of $\alpha$ to $[t_{i-1},t_i]$.
 
-
-
-Observe that there is a sequence of motions $m_i$ of the plane so that $m_i\circ\alpha(t_i)=m_{i+1}\circ\alpha(t_i)$ for any $i$ and 
+Note that there is a sequence of motions $m_i$ of the plane so that 
+\[m_i\circ\alpha(t_i)=m_{i+1}\circ\alpha(t_i)\] 
+for any $i$ and 
 the points 
-
 \[m_1\circ\alpha(t_0), m_1\circ\alpha(t_1),\dots m_k\circ\alpha(t_k)\] 
-
 appear on a line in the same order.
-Then for the concatenation 
-
+For the concatenation 
 \[\gamma=(m_1\circ\alpha_1)*(m_2\circ\alpha_2)*\dots*(m_k\circ\alpha_k)\]
-
 we have
-
 \[\ell(\gamma)=\ell(\alpha).\]
 
-
-
 Note that one can find a sequence of partitions of $[a,b]$ such that reparametrizations $\gamma'_n$ of 
-the corresponding curves $\gamma_n$ converge to a linear segment $\gamma_\infty'$. 
-Also, $\length\gamma'_\infty=\length\alpha$;
+the corresponding curves $\gamma_n$ converge to linear curve $\gamma_\infty'$.
+We can assume in addition that $\length\gamma'_\infty=\length\alpha$;
 indeed since $\gamma'_\infty$ is linear,
-
 \begin{align*}
 \length \gamma'_\infty&=|\gamma'(a)-\gamma'(b)|=
 \\
@@ -406,13 +288,9 @@ indeed since $\gamma'_\infty$ is linear,
 \\
 &=\length\alpha.
 \end{align*}
-
 where $\Sigma_n$ is the sum in the definition of length for the $n$-th partition.
 
-
-
-Applying the invariance of $\ell$ with respact to reparametizations, we get that
-
+Applying additivity, invariance of $\ell$ with respact to motions and reparametizations, we get that
 \begin{align*}
 \ell(\alpha)&=\lim_{n\to\infty}\ell(\gamma_n)=
 \\
@@ -422,6 +300,170 @@ Applying the invariance of $\ell$ with respact to reparametizations, we get that
 \\
 &=\length\alpha.
 \end{align*}
-
 \qedsf
 
+
+
+
+\section{Crofton formula}
+
+Let $\alpha$ be a plane curve and $u$ is a unit vector.
+Denote by $\alpha_u$ the orthogonal projection of $\alpha$ to a line $\ell$ in the direction of $u$;
+that is, $\alpha_u(t)\in\ell$ and $\alpha(t)-\alpha_u(t)\perp \ell$ for any $t$.
+
+\begin{thm}{Crofton formula}
+The length of any plane curve $\alpha$ is proportional to the average of lengths of its projection $\alpha_u$ for all unit vectors $u$.
+Moreover for any plane curve $\alpha$ we have
+\[\length\alpha=\tfrac\pi2\cdot\overline{\length \alpha_u},\]
+where $\overline{\length \alpha_u}$ denotes the average value of $\length \alpha_u$.
+\end{thm}
+
+\parit{Proof.}
+First let us show that the formula 
+\[\length\alpha=k\cdot\overline{\length \alpha_u},\eqlbl{eq:crofton-k}\]
+holds for some fixed coefficient $k$.
+It will follow once we show that both sides of formula satisfies the length axioms in \ref{prop:length-axioms}.
+
+The semi-continuity of the right hand side follows since $\length\alpha_u$ is semi-continuous and therefore the average has to be semi-continuous.
+It is straightforward to check the remaining properties exept the normalization.
+The normalization can be acheaved by adjusting~$k$.
+
+It remains to find $k$.
+Let us apply \ref{eq:crofton-k} to the unit circle.
+The circle has length $2\cdot\pi$ and its projection to any line has length 4 --- it is a segment of length 2 traveled back and forth.
+Evidently the average value is also $4$. 
+Therefore \[2\cdot \pi=k\cdot 4\]
+and therefore $k=\tfrac\pi2$.
+\qeds
+
+\parbf{Reformulation via number of intersections.}
+Given a pair a unit vector $u$ and a real number $x$,
+consider the line of vectors $w$ on the plane described by the equation
+\[\langle u, w\rangle =x,\]
+where $\langle u, w\rangle$ denotes the scalar product. 
+Any line on the plane admits exactly two such presentations with pair $(u,x)$ and $(-u,-x)$.
+A pair $(u,x)$ describes uniquely an \emph{oriented} line --- that is a line with chosen unit normal vector.
+
+Fix a unit vector $u_0$ and denote by $u(\phi)$ its rotation by angle $\phi$.
+Denote by $\ell(\phi,x)$ the oriented line for the pair $(u(\phi),x)$.
+To describe any line, we need a pair $(\phi,x)\in (-\pi,\pi]\times \RR$.
+
+For a curve $\alpha$  set $n_\alpha(\phi,x)$ to be the number of parameter values $t$ such that $\alpha(t)$ lies on the line $\ell(\phi,x)$. 
+The value $n_\alpha(\phi,x)$ has to be nonnegative integer or $\infty$.
+Note that if $\alpha$ is simple curve then $n_\alpha(\ell)$ is the number of intersections of $\alpha$ with $\ell$.
+
+
+\begin{thm}{An other Crofton formula}
+For any curve $\alpha$,
+\[\length\alpha=\tfrac14\cdot\iint_{(-\pi,\pi]\times \RR} n_\alpha(x,\phi)\cdot dx\cdot d\phi.\]
+the integral is to be understood in the sense of Lebesgue.
+\end{thm}
+
+By definition of average value,
+\[\overline{\length\alpha_u}
+=
+\frac1{2\cdot\pi}\cdot\int_{-\pi}^\pi \length\alpha_{u(\phi)}\cdot d\phi.\]
+Therefore  proof of this reformulation of the Crofton follows from the following observation.
+
+\begin{thm}{Observation}
+If $u=u(\phi)$, then 
+\[\length\alpha_u=\int_\RR n_\alpha(x,\phi)\cdot dx;\]
+
+\end{thm}
+
+The proof is straightforward for those who understand Lebesgue integral.
+
+\parbf{Variations.}
+The same argument can be used to derive other formulas of the same type.
+For example.
+
+Recall that big circle in a sphere is the intersection of sphere with a plane passing thru its center.
+For example equator as well as any meridian are a big circles.
+
+\begin{thm}{Spherical Crofton formula}
+The length of any curve $\alpha$ in the unit sphere is $\pi$ times the average number of its crossings with big circles.
+
+More presciently, given a unit vector $u$, denote by $n_\alpha(u)$ the number of crossings of $\alpha$ and the equator with pole at $u$.
+Then 
+\[\length\alpha=\overline{n_\alpha(u)}.\]
+
+Equivalently,
+\[\length\alpha=\overline{\length\alpha_u},\]
+where $\alpha_u$ denotes the curve obtianed by cloasest point projection of $\alpha$ on the equator with pole at $u$.
+\end{thm}
+
+
+\begin{thm}{Exercise}
+Come up with a Crofton formulas for curves in the Euclidean space via projections to lines and to planes.
+Find the coefficients in these formulas.
+\end{thm}
+
+\section{Applications}
+
+\parit{Alternative proof of Proposition~\ref{prop:convex-curve}.}
+Note that 
+\[\length \beta_u\ge \length \alpha_u\]
+for any unit vector $u$.
+Indeed $\alpha_u$ runs back and forth along a line segment and $\beta_u$ has to run at least as much.
+
+It follows that 
+\[\overline{\length \beta_u}\ge \overline{\length \alpha_u}.\]
+It remains to apply Crofton formula.
+\qeds
+
+
+Recall that diameter of a plane figure $F$ is defined as the least upper bound on the distances between pairs of its points;
+that is,
+\[\diam F=\sup\set{|x-y|}{x,y\in F}.\]
+
+The equilateral triangle with side 1 gives an example of convex figure of diameter 1 that can not be covered by a round disc of diameter~1.
+
+\begin{thm}{Exercise} 
+Assume $F$ is a convex figure of diameter 1 and $D$ is the round disc of diameter 1.
+Show that
+\[\perim F\le \perim D.\]
+\end{thm}
+
+\begin{wrapfigure}{r}{33 mm}
+\vskip-5mm
+\centering
+\includegraphics{mppics/pic-9}
+\end{wrapfigure}
+
+A convex figure $F$ has constant width $a$ if the orthogonal projection of $F$ to any line has length $a$.
+There are many non-circular shapes of constant width. 
+A nontrivial example is the Reuleaux triangle shown on the picture;
+it is the intersection of three round disks, each having its center on the boundary of the other two.
+The following exercise is the so called Barbier's theorem.
+
+\begin{thm}{Exercise} 
+Show that figures has constant width $a$ have the same perimeter (which is equal to $\pi\cdot a$ --- the perimeter of the round disc of diameter $a$).
+\end{thm}
+
+\begin{thm}{Exercise} 
+Let $\gamma$ be a closed curve in the unit sphere of length smaller than $2\cdot\pi$.
+Show that $\gamma$ lies in a hemisphere.
+\end{thm}
+
+\begin{thm}{Exercise} 
+Let $\alpha$ be a closed curve of length $\pi$.
+Show that it lies between a pair of parallel lines on distance $1$ from each other.
+\end{thm}
+
+\begin{thm}{Exercise}
+A spaceship flies around nonrotating planet or unit radius and came back to the original position;
+it was able to make a picture of every point on the surface of the planet.
+
+Try to use the Crofton formulas to get a lower bound on the length of its trajectory (does not need to be exact, but should be bigger than $2\cdot\pi$).
+
+What do you think could be the shortest trajectory?
+\end{thm}
+
+Hausdorff distance $d_H(F,G)$ between closed bounded sets $F$ and $G$ in the plane is defined as the exact lower bound on $\eps>0$ such that $\eps$-neightborhood of $F$ contains $G$ and $\eps$-neightborhood of $G$ contains~$F$.
+
+\begin{thm}{Exercise}
+Assume $F$ and $G$ be two closed convex figures on the plane such that $d_H(F,G)<\eps$.
+Show that 
+\[|\perim F-\perim G|<2\cdot\pi\cdot\eps.\]
+
+\end{thm}
